@@ -5,9 +5,10 @@ import { CheckinContext } from "../context/CheckinContext";
 const DniSection = () => {
     const { setPickAction, setScanDni } = useContext(CheckinContext);
     const handleSubmit = (e) => {
+        e.preventDefault();
         setScanDni(false);
         setPickAction(true);
-        e.preventDefault();
+        console.log("Avanzaste a seleccionar opcion");
     };
 
     return (

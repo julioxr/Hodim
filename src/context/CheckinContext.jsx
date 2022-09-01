@@ -9,26 +9,40 @@ const CheckinContextProvider = ({ children }) => {
     const [pickAction, setPickAction] = useState(false);
     const [cargo, setCargo] = useState(false);
     const [descargo, setDescargo] = useState(false);
+    const [pedido, setPedido] = useState(false);
+    const [detallePedido, setDetallePedido] = useState(false);
+    const [pedidoCompleto, setPedidoCompleto] = useState(false);
 
     const reset = () => {
         setInitialState(true);
         setPickAction(false);
         setScanDni(false);
+        setCargo(false);
+        setPedido(false);
+        setPedidoCompleto(false);
     };
 
     return (
         <CheckinContext.Provider
             value={{
                 initialState,
-                sidebar,
-                cargo,
-                descargo,
-                pickAction,
-                scanDni,
                 setInitialState,
+                sidebar,
                 setSidebar,
-                setPickAction,
+                scanDni,
                 setScanDni,
+                pickAction,
+                setPickAction,
+                cargo,
+                setCargo,
+                descargo,
+                setDescargo,
+                pedido,
+                setPedido,
+                detallePedido,
+                setDetallePedido,
+                pedidoCompleto,
+                setPedidoCompleto,
                 reset,
             }}
         >

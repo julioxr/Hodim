@@ -14,9 +14,10 @@ export const StyledFooter = styled.footer`
         align-items: center;
     }
 
-    span {
+    a {
         color: ${({ theme }) => `${theme.colors.secondary}`};
         font-weight: 600;
         margin-top: 3px;
+        text-decoration: none;
     }
 `;

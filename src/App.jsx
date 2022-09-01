@@ -1,10 +1,10 @@
-import { useContext } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./components/styles/Global.styles";
 import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
-import { CheckinContext } from "./context/CheckinContext";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Altas from "./pages/Altas";
+import Home from "./pages/Home";
 
 const Theme = {
     colors: {
@@ -15,14 +15,19 @@ const Theme = {
 };
 
 function App() {
-    const { initialState } = useContext(CheckinContext);
-
     return (
         <ThemeProvider theme={Theme}>
             <GlobalStyle />
-            <Header />
-            <Main />
-            {initialState && <Footer />}
+            <BrowserRouter>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/altas" element={<Altas />} />
+                    <Route path="/crear-pedido" element={"Crear pedido"} />
+                    <Route path="/check-in" element={<Home />} />
+                    <Route path="*" element={"Pagina no encontrada"} />
+                </Routes>
+            </BrowserRouter>
         </ThemeProvider>
     );
 }
