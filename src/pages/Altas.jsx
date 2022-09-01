@@ -12,6 +12,10 @@ const Altas = () => {
     return (
         <>
             <h1>Crear interlocutores</h1>
+            <p>
+                Si es la primera vez que vas a entrar a cargar aca todos tus
+                datos
+            </p>
             <StyledForm className="truck_data">
                 <label>Ingrese patente Camión</label>
                 <input type="text" />
